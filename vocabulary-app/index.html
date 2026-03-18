@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Vocabulary Builder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Daily Vocabulary Builder</h1>
+            <p>Learn 5 new English words every day!</p>
+        </header>
+
+        <main>
+            <section id="vocabulary-section">
+                <div id="cards-container">
+                    <!-- Vocabulary cards will be injected here by JavaScript -->
+                    <div class="loading">Loading words...</div>
+                </div>
+                <button id="next-words-btn" class="primary-btn">Next 5 Words</button>
+            </section>
+
+            <section id="quiz-section" class="hidden">
+                <h2>Quick Quiz</h2>
+                <p>Test your knowledge of the words you just learned.</p>
+                <div id="quiz-container">
+                    <!-- Quiz questions will be injected here by JavaScript -->
+                </div>
+                <button id="submit-quiz-btn" class="primary-btn">Submit Quiz</button>
+                <div id="quiz-results" class="hidden">
+                    <h3>Your Score: <span id="score-display">0</span>/5</h3>
+                    <button id="review-words-btn" class="secondary-btn">Review Words</button>
+                    <button id="restart-app-btn" class="primary-btn">Learn More Words</button>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 Daily Vocabulary Builder</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

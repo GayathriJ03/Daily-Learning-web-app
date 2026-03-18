@@ -1,4 +1,4 @@
-[
+const vocabData = [
   {
     "word": "Apple",
     "meaning": "A round fruit with red or green skin and a whitish interior.",
@@ -119,4 +119,4 @@
     "example": "I need to buy a new pair of shoes.",
     "hindi": "जूता (Joota)"
   }
-]
+];

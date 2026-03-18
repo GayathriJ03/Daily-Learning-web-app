@@ -16,17 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentQuizData = [];
     let wordIndex = 0;
 
-    // Fetch vocabulary data
-    fetch('vocab.json')
-        .then(response => response.json())
-        .then(data => {
-            allWords = shuffle(data);
-            loadNextWords();
-        })
-        .catch(error => {
-            console.error('Error fetching vocabulary:', error);
-            cardsContainer.innerHTML = '<div class="error" style="color: var(--secondary-color); text-align: center; font-weight: 500; font-size: 1.1rem; padding: 20px;">Failed to load vocabulary data.<br>If you are opening this file locally directly from the folder (file://), browsers may block loading vocab.json due to CORS security policies. Please use a local web server (like VS Code Live Server) to view the app properly.</div>';
-        });
+    // Load vocabulary data
+    if (typeof vocabData !== 'undefined') {
+        allWords = shuffle(vocabData);
+        loadNextWords();
+    } else {
+        console.error('Error: vocabData is not defined');
+        cardsContainer.innerHTML = '<div class="error" style="color: var(--secondary-color); text-align: center; font-weight: 500; font-size: 1.1rem; padding: 20px;">Failed to load vocabulary data. Make sure vocab.js is included properly.</div>';
+    }
 
     // Event Listeners
     nextWordsBtn.addEventListener('click', () => {
